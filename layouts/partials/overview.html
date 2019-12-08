@@ -1,17 +1,29 @@
 {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
-{{ $section := where .Site.RegularPages "Section" "in" $mainSections }}
-{{ $section_count := len $section }}
-{{ $n_posts := $.Param "recent_posts_number" | default 6 }}
+{{ $section_repos := where .Site.RegularPages "Section" "in" "repos" }}
+{{ $section_work_history := where .Site.RegularPages "Section" "in" "work-history" }}
+{{ $section_volunteering := where .Site.RegularPages "Section" "in" "volunteering" }}
 <div class="col-lg-9 col-md-8 col-12 float-md-left pl-md-2">
     <div class="UnderlineNav width-full user-profile-nav js-sticky top-0">
         <nav class="UnderlineNav-body" data-pjax aria-label="User profile">
             <a aria-current="page" class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 selected " href="{{ .Site.BaseURL }}">
                 Overview
             </a>
-            <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 " href="{{ absURL "posts/" }}">
-                Posts
+            <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 " href="{{ absURL "repos/" }}">
+                Repos
                 <span class="Counter hide-lg hide-md hide-sm">
-                    {{ $section_count}}
+                    {{ sub (len $section_repos) 1 }}
+                </span>
+            </a>
+            <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 " href="{{ absURL "work-history/" }}">
+                Work History
+                <span class="Counter hide-lg hide-md hide-sm">
+                    {{ sub (len $section_work_history) 1 }}
+                </span>
+            </a>
+            <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 " href="{{ absURL "volunteering/" }}">
+                Volunteering
+                <span class="Counter hide-lg hide-md hide-sm">
+                    {{ sub (len $section_volunteering) 1 }}
                 </span>
             </a>
             <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 " href="{{ absURL "about/" }}">
