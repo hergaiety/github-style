@@ -91,10 +91,12 @@
                     <img src="{{ "images/twitter.png" | absURL }}" class="avatar" width="35" height="35">
                 </a>
                 {{ end }}
+                {{ if .Site.Params.Rss}}
                 <a class="avatar-group-item" data-hovercard-type="organization"
                                              href="{{ "posts/index.xml" | absURL }}">
                     <img src="{{ "images/rss.png" | absURL }}" class="avatar" width="38" height="38">
                 </a>
+                {{ end }}
             </div>
 
             <div data-test-selector="profile-sponsorships">
