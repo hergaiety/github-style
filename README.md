@@ -1,10 +1,12 @@
 # github-style
 
+Fork of https://github.com/MeiK2333/github-style
+
 ## Install the theme
 
 ```bash
 mkdir themes
-git submodule add git@github.com:MeiK2333/github-style.git themes/github-style
+git submodule add git@github.com:sharpshark28/github-style.git themes/github-style
 ```
 
 ## Update the theme
