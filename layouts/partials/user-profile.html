@@ -22,7 +22,7 @@
                     <span class="p-name vcard-fullname d-block overflow-hidden"
                         itemprop="name">{{ .Site.Params.author }}</span>
                     <span class="p-nickname vcard-username d-block"
-                        itemprop="additionalName">{{ .Site.Params.github }}</span>
+                        itemprop="additionalName">{{ .Site.Params.gitlab }} {{ .Site.Params.github }}</span>
                 </h1>
             </div>
 
@@ -83,6 +83,12 @@
             <div class="border-top py-3 clearfix hide-sm hide-md">
                 <h2 class="mb-1 h4">Organizations</h2>
 
+                {{ if .Site.Params.Twitter}}
+                <a class="avatar-group-item" data-hovercard-type="organization"
+                    href="https://gitlab.com/{{ .Site.Params.gitlab }}">
+                    <img src="{{ "images/gitlab.png" | absURL }}" class="avatar" width="35" height="35">
+                </a>
+                {{ end }}
                 <a class="avatar-group-item" data-hovercard-type="organization"
                     href="https://github.com/{{ .Site.Params.github }}">
                     <img src="{{ "images/github.png" | absURL }}" class="avatar" width="35" height="35">
