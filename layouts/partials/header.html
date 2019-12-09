@@ -24,6 +24,25 @@
         </div>
     </header>
 </div>
+<div class="Header-item Header-item--full flex-justify-center d-lg-none" style="margin-right: auto;">
+  <ul>
+    {{ if .Site.Params.resume }}
+    <a rel="nofollow me" href="{{ .Site.Params.resume | absURL }}">Resume</a>
+    {{ end }}
+    {{ if and .Site.Params.resume .Site.Params.blogurl }}
+    |
+    {{end}}
+    {{ if .Site.Params.blogurl }}
+    <a rel="nofollow me" href="{{ .Site.Params.blogurl }}">{{ .Site.Params.blogtext }}</a>
+    {{ end }}
+    {{ if and .Site.Params.blogurl .Site.Params.arturl }}
+    |
+    {{end}}
+    {{ if .Site.Params.arturl }}
+    <a rel="nofollow me" href="{{ .Site.Params.arturl }}">{{ .Site.Params.arttext }}</a>
+    {{ end }}
+  </ul>
+</div>
 
 <div id="start-of-content" class="show-on-focus"></div>
 <div id="js-flash-container">
