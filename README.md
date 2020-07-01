@@ -6,7 +6,7 @@ Fork of https://github.com/MeiK2333/github-style
 
 ```bash
 mkdir themes
-git submodule add git@github.com:sharpshark28/github-style.git themes/github-style
+git submodule add git@github.com:hergaiety/github-style.git themes/github-style
 ```
 
 ## Update the theme
